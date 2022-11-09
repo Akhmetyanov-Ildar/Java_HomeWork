@@ -1,10 +1,12 @@
 package Homework_3;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class Main {
 
     public static void main(String[] args) {
+
 // task 1:
 //        int[] arr = {88, 3, 1000, 2, 1, 6, 2, 3, 4, -5, -100, 1, 123};
 //        Task1mergeSort.mergeSort(arr);

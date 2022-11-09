@@ -1,8 +1,11 @@
 package Homework_3;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
+
 
 public class Task3minMaxAverage {
+    Logger logger = Logger.getLogger(Main.class.getName());
 //    «адан целочисленный список ArrayList. Ќайти минимальное,
 //    максимальное и среднее из этого списка.
 
