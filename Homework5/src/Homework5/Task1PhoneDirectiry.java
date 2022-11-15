@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Task1PhoneDirectiry {
-    //        Реализуйте структуру телефонной книги с помощью HashMap,
-//                учитывая, что 1 человек может иметь несколько телефонов.
+    //        Р РµР°Р»РёР·СѓР№С‚Рµ СЃС‚СЂСѓРєС‚СѓСЂСѓ С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё СЃ РїРѕРјРѕС‰СЊСЋ HashMap,
+//                СѓС‡РёС‚С‹РІР°СЏ, С‡С‚Рѕ 1 С‡РµР»РѕРІРµРє РјРѕР¶РµС‚ РёРјРµС‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ С‚РµР»РµС„РѕРЅРѕРІ.
     private Map<String, List<String>> directory_hm = new HashMap<>();
     private List<String> phone_number_list;
 
