@@ -17,4 +17,9 @@ public class Student extends User{
     public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
+
+    @Override
+    public String toString() {
+        return super.getLastName() + " " + super.getFirstName();
+    }
 }

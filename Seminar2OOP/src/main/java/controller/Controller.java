@@ -1,14 +1,12 @@
 package controller;
 
-import data.Group;
-import data.Student;
-import data.Teacher;
-import data.User;
+import data.*;
 import service.GroupService;
 import service.UserService;
 import view.StudentView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Controller {
@@ -23,12 +21,12 @@ public class Controller {
 //        studentView.sendOnConsole(students);
     }
 
-    public void createTeacher (String firstName, String lastName, String patronymic) {
+    public void createTeacher(String firstName, String lastName, String patronymic) {
         userService.createTeacher(firstName, lastName, patronymic);
 
     }
 
-    private List<Student> getStudents(Long[] ids) {
+    public List<Student> getStudents(Long[] ids) {
         List<Student> students = new ArrayList<>();
         for (int i = 0; i < ids.length; i++) {
             Student s = userService.getStudent(ids[i]);
@@ -45,8 +43,20 @@ public class Controller {
     }
 
 
-    public Group createGroup(Long teacherId, Long[] studentIds) {
-        return groupService.createGroup(getTeacher(teacherId), getStudents(studentIds));
+    public Group createGroup(Long teacherId, Long[] studentIds, String groupName) {
+        return groupService.createGroup(getTeacher(teacherId), getStudents(studentIds), groupName);
+    }
+
+    public void showSortStudentGroup(List<Student> students) {
+        Collections.sort(students, new StudyGroupComparator());
+        studentView.showStudents(students);
+    }
+
+    public void showSortedStudentsInGroups(List<Group> groups) {
+        for (Group g : groups) {
+            Collections.sort(g.getStudents(), new StudyGroupComparator());
+            studentView.showStudents(g.getStudents(), g.getGroupName());
+        }
     }
 
 }

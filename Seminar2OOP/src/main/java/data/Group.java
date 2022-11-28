@@ -7,9 +7,12 @@ public class Group {
    private Teacher teacher;
    private List<Student> students;
 
-   public Group(Teacher teacher, List<Student> students) {
+   private String groupName;
+
+   public Group(Teacher teacher, List<Student> students, String groupName) {
        this.teacher = teacher;
        this.students = students;
+       this.groupName = groupName;
    }
     public Teacher getTeacher() {
         return teacher;
@@ -27,9 +30,18 @@ public class Group {
         this.students = students;
     }
 
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
     @Override
     public String toString() {
         return "Group{" +
+                "groupName=" + groupName+
                 "teacher=" + teacher +
                 ", students=" + students.size() +
                 '}';
